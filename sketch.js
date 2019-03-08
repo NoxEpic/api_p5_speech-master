@@ -14,10 +14,10 @@ function setup() {
         window.SpeechRecognition;
 
 
-    cnv = createCanvas(400, 600);
+    cnv = createCanvas(650, 600);
     background('red');
     txt = createElement("h5", "Say something..")
-        .position(40, 200)
+        .position(100, 200)
         .style("color:white;")
         .hide();
 
@@ -47,12 +47,46 @@ function showResult() {
     if (myRec.resultValue == true) {
         sentence = myRec.resultString.split(' ').pop();
         resultP.html(sentence);
-        if(sentence.includes("orange")){
+        if(sentence.includes("orange") || sentence.includes("Orange") ){
             switchImage('assets/orange.png');
         }
         if(sentence.includes("lemon")){
             switchImage('assets/lemon.png');
         }    
+        if(sentence.includes("cake")){
+            switchImage('assets/cake.png');
+        }    
+        if(sentence.includes("smart")){
+            switchImage('assets/smart.gif');
+        }    
+        if(sentence.includes("blind") || sentence.includes("black") ){
+            switchImage('assets/blind.jpg');
+        }     
+        if(sentence.includes("hey")){
+            switchImage('assets/hey.jpg');
+        }  
+        if(sentence.includes("my")){
+            switchImage('assets/my.jpg');
+        }  
+        if(sentence.includes("name")){
+            switchImage('assets/name.jpg');
+        }  
+        if(sentence.includes("is")){
+            switchImage('assets/is.jpg');
+        }  
+        if(sentence.includes("benjamin")|| sentence.includes("Benjamin")){
+            switchImage('assets/benjamin.jpg');
+        }  
+        if(sentence.includes("loco")|| sentence.includes("Loco")){
+            switchImage('assets/loco.png');
+        } 
+        if(sentence.includes("smooth")){
+            switchImage('assets/smooth.jpg');
+        }  
+        if(sentence.includes("walk")){
+            switchImage('assets/walk.png');
+        }  
+        
     }
 }
 
@@ -60,7 +94,7 @@ function switchImage(url){
     if(img == undefined){
         img = createImg(url)
         .position(width/2, height/2)
-        .style("width:50px;height:50px");
+        .style("width:300px;height:300px");
     }else{
         img.attribute('src', url)
     }
